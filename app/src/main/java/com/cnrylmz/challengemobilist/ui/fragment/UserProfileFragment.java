@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.cnrylmz.challengemobilist.R;
-import com.cnrylmz.challengemobilist.Utils.CustomComparatorTime;
-import com.cnrylmz.challengemobilist.Utils.CustonComparatorFollower;
-import com.cnrylmz.challengemobilist.Utils.EndlessRecyclerViewScrollListener;
-import com.cnrylmz.challengemobilist.api.helper.HeaderDecoration;
+import com.cnrylmz.challengemobilist.api.model.User;
+import com.cnrylmz.challengemobilist.utils.CustomComparatorTime;
+import com.cnrylmz.challengemobilist.utils.CustonComparatorFollower;
+import com.cnrylmz.challengemobilist.utils.EndlessRecyclerViewScrollListener;
 import com.cnrylmz.challengemobilist.api.model.Feed;
 import com.cnrylmz.challengemobilist.api.model.UserInfoResponse;
 import com.cnrylmz.challengemobilist.base.BaseFragment;
@@ -30,6 +31,7 @@ import java.util.Set;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -128,8 +130,6 @@ public class UserProfileFragment extends BaseFragment {
         userData = getArguments().getParcelable(USER_DATA);
         super.onViewCreated(view, bundle);
 
-
-
         allFeeds.addAll(userData.getFeed());
 
         initRecycler();
@@ -138,6 +138,7 @@ public class UserProfileFragment extends BaseFragment {
 
 
     }
+
 
     private void initRecycler() {
         linearLayoutManager = new LinearLayoutManager(getContext());

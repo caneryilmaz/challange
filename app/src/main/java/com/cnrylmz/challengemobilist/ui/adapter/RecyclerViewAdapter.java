@@ -6,19 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cnrylmz.challengemobilist.R;
-import com.cnrylmz.challengemobilist.Utils.DateUtil;
-import com.cnrylmz.challengemobilist.api.helper.ItemTouchHelperCallback;
+import com.cnrylmz.challengemobilist.utils.DateUtil;
 import com.cnrylmz.challengemobilist.api.model.Feed;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -28,17 +23,11 @@ import butterknife.ButterKnife;
  * Created by Caner on 08.05.2019.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements
-        ItemTouchHelperCallback.ItemTouchHelperAdapter{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     public List<Feed> itemlist;
 
     OnClickListener onClickListener;
-
-    @Override
-    public void onItemDismiss(int position) {
-
-    }
 
     public interface OnClickListener {
         void onClick(int pos);

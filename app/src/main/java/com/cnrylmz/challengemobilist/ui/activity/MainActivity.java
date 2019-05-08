@@ -2,16 +2,21 @@ package com.cnrylmz.challengemobilist.ui.activity;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.cnrylmz.challengemobilist.R;
-import com.cnrylmz.challengemobilist.Utils.AppUtils;
+import com.cnrylmz.challengemobilist.api.model.User;
+import com.cnrylmz.challengemobilist.utils.AppUtils;
 import com.cnrylmz.challengemobilist.api.model.UserInfoResponse;
 import com.cnrylmz.challengemobilist.base.BaseProfileActivity;
 import com.cnrylmz.challengemobilist.ui.fragment.UserProfileFragment;
 
 import butterknife.Bind;
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -21,6 +26,18 @@ public class MainActivity extends BaseProfileActivity {
 
     @Bind(R.id.progress_bar)
     ProgressBar progressBar;
+
+    @Bind(R.id.text_name)
+    TextView textName;
+
+    @Bind(R.id.text_bio)
+    TextView textBio;
+
+    @Bind(R.id.profile_image)
+    CircleImageView profileImage;
+
+    @Bind(R.id.image_cover)
+    ImageView coverImage;
 
     @Override
     protected int getLayoutResId() {
@@ -36,7 +53,6 @@ public class MainActivity extends BaseProfileActivity {
             finish();
         }
     }
-
 
     public void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
@@ -57,6 +73,7 @@ public class MainActivity extends BaseProfileActivity {
 
                     @Override
                     public void onNext(UserInfoResponse value) {
+                        bindInfo(value.getUser());
                         fillUserData(value);
                     }
 
@@ -77,4 +94,10 @@ public class MainActivity extends BaseProfileActivity {
         addFragment(UserProfileFragment.newInstance(response));
     }
 
+    private void bindInfo(User user) {
+        textName.setText(user.getName());
+        textBio.setText(user.getBio());
+        Glide.with(this).load(user.getProfilePhoto()).into(profileImage);
+        Glide.with(this).load(user.getCoverPhoto()).into(coverImage);
+    }
 }

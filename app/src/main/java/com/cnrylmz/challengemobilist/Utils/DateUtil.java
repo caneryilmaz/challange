@@ -1,8 +1,7 @@
-package com.cnrylmz.challengemobilist.Utils;
+package com.cnrylmz.challengemobilist.utils;
 
 import android.util.Log;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

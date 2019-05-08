@@ -1,4 +1,4 @@
-package com.cnrylmz.challengemobilist.Utils;
+package com.cnrylmz.challengemobilist.utils;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;

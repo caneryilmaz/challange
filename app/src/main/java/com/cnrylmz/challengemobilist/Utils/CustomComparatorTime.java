@@ -1,4 +1,4 @@
-package com.cnrylmz.challengemobilist.Utils;
+package com.cnrylmz.challengemobilist.utils;
 
 import com.cnrylmz.challengemobilist.api.model.Feed;
 
