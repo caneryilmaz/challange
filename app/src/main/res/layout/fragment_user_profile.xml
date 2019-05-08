@@ -14,11 +14,13 @@
         android:id="@+id/recycler_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/adView"
+        android:layout_above="@+id/container_banner_line"
         android:layout_below="@+id/container_tabs"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="0dp" />
+        android:layout_marginRight="5dp" />
+
+    <include layout="@layout/include_banner_up_title" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -26,7 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id"/>
+        ads:adUnitId="@string/admob_banner_id" />
 
 </RelativeLayout>

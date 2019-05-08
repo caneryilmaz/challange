@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-  >
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/container_banner_line"
+    android:layout_above="@+id/adView">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="7dp"
+        android:layout_toLeftOf="@+id/text_banner_info"
+        android:background="@color/sorting_passive" />
+
+    <TextView
+        android:id="@+id/text_banner_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/banner_up_title"
+        android:textAllCaps="true"
+        android:textColor="@color/sorting_passive"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@+id/text_banner_info"
+        android:background="@color/sorting_passive" />
 
 </RelativeLayout>
