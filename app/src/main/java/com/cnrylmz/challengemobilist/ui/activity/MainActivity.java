@@ -1,5 +1,6 @@
 package com.cnrylmz.challengemobilist.ui.activity;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +24,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends BaseProfileActivity {
+
+    boolean doubleBackToExitPressedOnce = false;
+
 
     @Bind(R.id.progress_bar)
     ProgressBar progressBar;
@@ -99,5 +103,23 @@ public class MainActivity extends BaseProfileActivity {
         textBio.setText(user.getBio());
         Glide.with(this).load(user.getProfilePhoto()).into(profileImage);
         Glide.with(this).load(user.getCoverPhoto()).into(coverImage);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

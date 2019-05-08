@@ -52,4 +52,8 @@ public abstract class BaseProfileActivity extends AppCompatActivity {
         UserInfoService userService = ApiModule.getClient().create(UserInfoService.class);
         return userService;
     }
+
+    public BaseFragment getActiveFragment() {
+        return (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+    }
 }

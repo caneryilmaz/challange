@@ -6,5 +6,7 @@
     <string name="tab_by_time">By Time</string>
     <string name="tab_by_followers">Popularity</string>
 
+    <string name="admob_uid">ca-app-pub-1986087324325861~2233336664</string>
+    <string name="admob_banner_id">ca-app-pub-1986087324325861/2044321320</string>
 
 </resources>

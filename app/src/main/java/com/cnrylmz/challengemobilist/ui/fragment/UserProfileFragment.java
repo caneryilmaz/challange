@@ -21,6 +21,9 @@ import com.cnrylmz.challengemobilist.api.model.UserInfoResponse;
 import com.cnrylmz.challengemobilist.base.BaseFragment;
 import com.cnrylmz.challengemobilist.ui.activity.MainActivity;
 import com.cnrylmz.challengemobilist.ui.adapter.RecyclerViewAdapter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,13 +63,15 @@ public class UserProfileFragment extends BaseFragment {
     @Bind(R.id.button_sorting_pop)
     LinearLayout backgroundPopTab;
 
+    @Bind(R.id.adView)
+    AdView adView;
+
     private UserInfoResponse userData;
     private RecyclerViewAdapter recyclerViewAdapter;
 
     ArrayList<Feed> allFeeds = new ArrayList<>();
 
     private Set<Feed> hashFeed = new HashSet<Feed>();
-
 
     private LinearLayoutManager linearLayoutManager;
 
@@ -129,6 +134,7 @@ public class UserProfileFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle bundle) {
         userData = getArguments().getParcelable(USER_DATA);
         super.onViewCreated(view, bundle);
+        fillAdMob();
 
         allFeeds.addAll(userData.getFeed());
 
@@ -139,6 +145,11 @@ public class UserProfileFragment extends BaseFragment {
 
     }
 
+    private void fillAdMob(){
+        MobileAds.initialize(getContext(), getString(R.string.admob_uid));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+    }
 
     private void initRecycler() {
         linearLayoutManager = new LinearLayoutManager(getContext());

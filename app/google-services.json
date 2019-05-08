@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1058537930590",
+    "firebase_url": "https://challenge-c7c99.firebaseio.com",
+    "project_id": "challenge-c7c99",
+    "storage_bucket": "challenge-c7c99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058537930590:android:5b164b3c7852452d",
+        "android_client_info": {
+          "package_name": "com.cnrylmz.challengemobilist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058537930590-of51uqddeo1t6g2dtu0ueplmnsgevloc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cnrylmz.challengemobilist",
+            "certificate_hash": "3b5c7fbf9aba3ce9bc1319da8d7843b65f7daeea"
+          }
+        },
+        {
+          "client_id": "1058537930590-h9fb0falbjsiicljdal123fvjj85s2dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK4BUyej7yWZi8UvKpl9O2WKH6uKvuerw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058537930590-h9fb0falbjsiicljdal123fvjj85s2dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
