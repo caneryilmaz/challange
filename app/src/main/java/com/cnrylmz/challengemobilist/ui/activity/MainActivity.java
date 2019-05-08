@@ -109,7 +109,7 @@ public class MainActivity extends BaseProfileActivity {
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
-            return;
+            finish();
         }
 
         this.doubleBackToExitPressedOnce = true;
