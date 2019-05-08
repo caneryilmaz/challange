@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/background_sorting_tab"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/button_sorting_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@color/sorting_selected"
+        android:layout_toLeftOf="@+id/center_line"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_sorting_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/tab_by_time"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/center_line"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <LinearLayout
+        android:id="@+id/button_sorting_pop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/center_line"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/text_sorting_popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/tab_by_followers"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

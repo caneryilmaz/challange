@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ChallengeMobilIst</string>
+    <string name="error_internet_connection">Internet bağlantınızı kontrol ediniz.</string>
+    <string name="feed_followers_title">followers</string>
+
+    <string name="tab_by_time">By Time</string>
+    <string name="tab_by_followers">Popularity</string>
+
+
+</resources>
