@@ -6,13 +6,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.cnrylmz.challengemobilist.R;
-import com.cnrylmz.challengemobilist.api.model.User;
 import com.cnrylmz.challengemobilist.utils.CustomComparatorTime;
 import com.cnrylmz.challengemobilist.utils.CustonComparatorFollower;
 import com.cnrylmz.challengemobilist.utils.EndlessRecyclerViewScrollListener;
@@ -34,7 +33,6 @@ import java.util.Set;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import de.hdodenhof.circleimageview.CircleImageView;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -145,9 +143,9 @@ public class UserProfileFragment extends BaseFragment {
 
     }
 
-    private void fillAdMob(){
+    private void fillAdMob() {
         MobileAds.initialize(getContext(), getString(R.string.admob_uid));
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("AD0B8396F220351F05D4D98E1F8261FC").build();
         adView.loadAd(adRequest);
     }
 

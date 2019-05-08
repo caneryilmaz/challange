@@ -9,4 +9,6 @@
     <string name="admob_uid">ca-app-pub-1986087324325861~2233336664</string>
     <string name="admob_banner_id">ca-app-pub-1986087324325861/2044321320</string>
 
+    <string name="banner_up_title">Reklam</string>
+
 </resources>
